@@ -6,29 +6,24 @@ var copy = require('./copy');
 
 var execFile = require('child_process').execFile;
 
-var argv = process.argv.slice(2);
-//工程名字
-var projectName = argv[0];
-
-//模板名字
-var templateName = argv[1];
+var commander = require('commander');
 
 //当前目录文件夹
 var cwd = process.cwd();
 
-var projectDir = path.resolve(cwd,projectName);
-//git init shell
+commander
+  .version('0.0.1')
+  .option('-p, --project [value]','project name')
+  .parse(process.argv);
 
-copy(
-  path.resolve(__dirname,'./template',templateName),
-  projectDir
-);
 
-//var gitInitSh = path.resolve(__dirname,'gitInit.sh');
+var templateDir = path.resolve(__dirname,'./template',commander.project);
+var targetDir = path.resolve(cwd,commander.project);
 
-//const child = execFile(gitInitSh, [projectDir,projectName], (error, stdout, stderr) => {
-//  if (error) {
-//    throw error;
-//  }
-//  console.log(stdout);
-//});
+if(fs.existsSync(templateDir)){
+  copy(
+    templateDir,
+    targetDir
+  );
+}
+console.log('copy done');
