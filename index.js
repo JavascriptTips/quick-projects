@@ -6,7 +6,7 @@ var copy = require('./copy');
 
 var commander = require('commander');
 
-var packageObj = JSON.parse(fs.readFileSync('./package.json').toString())
+var packageObj = JSON.parse(fs.readFileSync(path.resolve(__dirname,'./package.json')).toString())
 
 //当前目录文件夹
 var cwd = process.cwd();
@@ -19,7 +19,7 @@ commander
 
 
 var templateDir = path.resolve(__dirname,'./template',commander.project);
-var targetDir = path.resolve(cwd,commander.project);
+var targetDir = path.resolve(cwd,commander.name);
 
 if(fs.existsSync(templateDir)){
   copy(
@@ -37,7 +37,7 @@ var packageFilePath = path.join(targetDir,'package.json')
 var packageObj = JSON.parse(fs.readFileSync(packageFilePath).toString())
 
 
-packageObj.name = commander.project
-packageObj.description = commander.project
+packageObj.name = commander.name
+packageObj.description = commander.name
 
 fs.writeFileSync(packageFilePath,JSON.stringify(packageObj,null,2))

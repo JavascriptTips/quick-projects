@@ -85,4 +85,7 @@ re.js
 
 npm-debug.log
 
-./test
+template/simple/node_modules
+template/*/node_modules
+
+_test
