@@ -4,16 +4,17 @@ var path = require('path');
 
 var copy = require('./copy');
 
-var execFile = require('child_process').execFile;
-
 var commander = require('commander');
+
+var packageObj = JSON.parse(fs.readFileSync('./package.json').toString())
 
 //当前目录文件夹
 var cwd = process.cwd();
 
 commander
-  .version('0.0.1')
-  .option('-p, --project [value]','project name')
+  .version(packageObj.version)
+  .option('-p, --project [value]','template name')
+  .option('-n, --name [value]','project name')
   .parse(process.argv);
 
 
@@ -27,3 +28,16 @@ if(fs.existsSync(templateDir)){
   );
 }
 console.log('copy done');
+
+
+//替换名字
+var packageFilePath = path.join(targetDir,'package.json')
+
+
+var packageObj = JSON.parse(fs.readFileSync(packageFilePath).toString())
+
+
+packageObj.name = commander.project
+packageObj.description = commander.project
+
+fs.writeFileSync(packageFilePath,JSON.stringify(packageObj,null,2))
