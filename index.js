@@ -31,7 +31,7 @@ commander
 
 commander.project = projectMap(commander.project)
 
-var commonDir = path.resolve(__dirname,'./template','./common')
+var commonDir = path.resolve(__dirname,'./common')
 
 var templateDir = path.resolve(__dirname,'./template',commander.project);
 var targetDir = path.resolve(cwd,commander.name);
