@@ -17,3 +17,7 @@
  - react-redux react，redux的前端的工程
  
  - rr react-redux的简写
+ 
+ ### License
+ 
+ MIT
