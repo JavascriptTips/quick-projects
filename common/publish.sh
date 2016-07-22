@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
-npm publish
+withoutNpm=$1
+
+if [ ! $withoutNpm ]
+then
+  npm publish
+fi
 git push

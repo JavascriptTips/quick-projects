@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
-npm publish
-git push origin master
+withNpm=$1
+
+if [ ! $withNpm ]
+then
+  echo "fuck"
+  npm publish
+fi
+git push

@@ -1,0 +1,12 @@
+{
+  "name": "name",
+  "version": "1.0.0",
+  "description": "simple nodejs module",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "",
+  "license": "GPL",
+  "dependencies": {
+  }
+}
