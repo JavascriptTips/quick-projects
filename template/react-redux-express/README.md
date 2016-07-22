@@ -15,3 +15,7 @@
 启动
 
 > npm start
+
+### License
+
+MIT

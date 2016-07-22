@@ -14,13 +14,11 @@ var cwd = process.cwd();
 function projectMap(p){
 
   var m = {
-    rre:'react-redux-express'
-  }
+    rre:'react-redux-express',
+    n:'node-module',
+  };
+
   return m[p] ? m[p] : p;
-}
-
-function copyCommon(){
-
 }
 
 commander
@@ -37,10 +35,11 @@ var templateDir = path.resolve(__dirname,'./template',commander.project);
 var targetDir = path.resolve(cwd,commander.name);
 
 if(fs.existsSync(templateDir)){
-  //clone project
-  copy(templateDir, targetDir);
   //clone common files
   copy(commonDir,targetDir)
+
+  //clone project
+  copy(templateDir, targetDir);
   //替换名字
   var packageFilePath = path.join(targetDir,'package.json')
 
