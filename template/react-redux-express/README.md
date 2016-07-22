@@ -18,4 +18,4 @@
 
 ### License
 
-MIT
+GPL
