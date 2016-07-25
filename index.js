@@ -4,12 +4,16 @@ var path = require('path');
 
 var copy = require('./copy');
 
+var execFile = require('child_process').execFile;
+
 var commander = require('commander');
 
 var packageObj = JSON.parse(fs.readFileSync(path.resolve(__dirname,'./package.json')).toString())
 
 //当前目录文件夹
 var cwd = process.cwd();
+
+var afterExecFile = path.resolve(__dirname,'./afterCopyDone.sh')
 
 function projectMap(p){
 
@@ -49,6 +53,11 @@ if(fs.existsSync(templateDir)){
   packageObj.description = commander.name
 
   fs.writeFileSync(packageFilePath,JSON.stringify(packageObj,null,2))
+
+
+  execFile(afterExecFile,{
+    cwd:targetDir
+  })
 
 }else{
   throw new Error('project not found')
