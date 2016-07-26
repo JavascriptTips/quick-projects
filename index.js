@@ -29,6 +29,7 @@ commander
   .version(packageObj.version)
   .option('-p, --project [value]','template name')
   .option('-n, --name [value]','project name')
+  .option('-v, --version','cli version')
   .parse(process.argv);
 
 commander.project = projectMap(commander.project)
