@@ -13,7 +13,7 @@ import {routerBuild,createMyStore} from '../../../common/routerBuild'
 
 import buildRouterList from '../../../common/buildRouterList'
 
-import defaultRouterComponent from './scene'
+import defaultRouterComponent from './defaultRouterComponent'
 
 var routerList = [
   <IndexRoute key="route0" component={defaultRouterComponent} />
@@ -25,12 +25,7 @@ routerList = routerList.concat(buildRouterList(routersLoad));
 
 var myStore = createMyStore(mainReducers,{
   withRouter:true,
-
   initialState:{
-    scenes:[],
-    basics:[],
-    materials:[],
-    players:[],
   }
 });
 

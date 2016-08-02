@@ -23,12 +23,7 @@ class Main extends React.Component {
   render(){
     return (
       <div>
-        <Navbar />
-
-        <ContentsBox>
-          <AsideBoard />
           {routerList}
-        </ContentsBox>
       </div>
     )
   }

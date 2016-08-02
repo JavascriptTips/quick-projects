@@ -6,8 +6,6 @@ module.exports = {
     index: './js/index.js',
   },
   externals: {
-    pixi: 'Pixi',
-    PIXI: 'PIXI',
   },
   output: {
     path: path.resolve(__dirname, './dist/'),
