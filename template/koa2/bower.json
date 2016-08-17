@@ -1,0 +1,20 @@
+{
+  "name": "web-components-server",
+  "version": "0.0.0",
+  "authors": [
+  ],
+  "description": "web-components-server",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "highlight":"x.x.x",
+    "jquery":"x.x.x",
+    "vue":"x.x.x"
+  }
+}

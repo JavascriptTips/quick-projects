@@ -1,0 +1,13 @@
+.search-box{
+    margin-top: 60px;
+    transform: scale(1.2,1.2);
+}
+
+.result-list{
+    margin: 0 auto;
+    width: 1008px;
+}
+
+.result-list > * {
+    margin: 15px;
+}
