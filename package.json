@@ -7,7 +7,7 @@
   },
   "author": "",
   "bin": {
-    "qp": "./index2.js"
+    "qp": "./cli.js"
   },
   "license": "GPL",
   "dependencies": {

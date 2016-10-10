@@ -14,7 +14,11 @@ const cwd = process.cwd();
 
 const curPackagePath = path.resolve(__dirname,'./package.json');
 
+const afterExecFile = path.resolve(__dirname,'./afterCopyDone.sh')
+
+
 const version = readJson(curPackagePath).version;
+
 
 const tempList = fs.readdirSync(templateDir);
 
@@ -25,6 +29,7 @@ var config = {
   templateDir,
   cwd,
   tempList,
+  afterExecFile,
   version
 };
 

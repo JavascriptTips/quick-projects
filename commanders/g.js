@@ -6,6 +6,7 @@ var path = require('path');
 
 var copy = require('../lib/copy');
 var readJson = require('../lib/readJson')
+var execFile = require('child_process').execFile;
 
 module.exports = function (commander,config) {
 
@@ -38,6 +39,10 @@ module.exports = function (commander,config) {
         targetPackageObj.description = name
 
         fs.writeFileSync(packagePath,JSON.stringify(targetPackageObj,null,2));
+
+        execFile(config.afterExecFile,{
+          cwd:targetDir
+        });
 
         console.log(`${templateName} build complete!`);
       }else{
