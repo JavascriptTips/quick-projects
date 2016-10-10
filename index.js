@@ -2,7 +2,7 @@
 var fs = require('fs');
 var path = require('path');
 
-var copy = require('./copy');
+var copy = require('./lib/copy');
 
 var execFile = require('child_process').execFile;
 
@@ -48,12 +48,12 @@ if(fs.existsSync(templateDir)){
   //替换名字
   var packageFilePath = path.join(targetDir,'package.json')
 
-  var packageObj = JSON.parse(fs.readFileSync(packageFilePath).toString())
+  var targetPackageObj = JSON.parse(fs.readFileSync(packageFilePath).toString())
 
-  packageObj.name = commander.name
-  packageObj.description = commander.name
+  targetPackageObj.name = commander.name
+  targetPackageObj.description = commander.name
 
-  fs.writeFileSync(packageFilePath,JSON.stringify(packageObj,null,2))
+  fs.writeFileSync(packageFilePath,JSON.stringify(targetPackageObj,null,2))
 
 
   execFile(afterExecFile,{
