@@ -3,13 +3,13 @@
   "version": "0.0.1",
   "description": "auth progress",
   "keywords": [
-    "user-auth",
     "koa",
-    "koa2.0"
+    "koa2.0",
+    "koa middleware"
   ],
   "main": "index.js",
   "scripts": {
-    "test":"node test/cookie.js"
+    "test":"node test/middle.js"
   },
   "author": "",
   "license": "GPL",
