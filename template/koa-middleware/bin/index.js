@@ -3,7 +3,10 @@
  */
 
 
-module.exports = function *(next){
+module.exports = function (config) {
+
+  return function *(next){
 
 
+  }
 }
