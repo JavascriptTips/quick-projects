@@ -2,9 +2,12 @@
 
 快速生成各种基本的工程的命令行工具
 
-> qp -p 模版名 -n 工程名
+> qp g 模版名 -n 工程名
 
--p 可选的值
+
+> qp ls
+
+查看可选模版名可选的值
 
  - simple 最简单的html工程
   
@@ -12,11 +15,9 @@
  
  - react-redux-express react，redux的express工程
   
- - rre react-redux-node 的简写
-
  - react-redux react，redux的前端的工程
  
- - rr react-redux的简写
+ - koa-moddileware koa中间件
  
  ### License
  
