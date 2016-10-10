@@ -22,9 +22,8 @@ function loadRouter(r,obj,method,prePath){
 
     var fn = obj[key];
 
-
     if(_.isPlainObject(fn)){
-      loadRouter(r,fn,key,prePath);
+      loadRouter(r,fn,key,`${prePath}${key}/`);
     }else{
       console.log(`load ${method} ${prePath}${path}`);
       r[method](`${prePath}${path}`,fn);
