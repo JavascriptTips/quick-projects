@@ -1,13 +1,13 @@
 {
-  "name": "quick-project",
-  "version": "0.5.0",
+  "name": "quick-projects",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
   },
   "author": "",
   "bin": {
-    "qp": "./index.js"
+    "qp": "./cli.js"
   },
   "license": "GPL",
   "dependencies": {
