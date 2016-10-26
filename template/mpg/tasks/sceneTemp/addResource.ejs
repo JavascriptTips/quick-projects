@@ -1,0 +1,19 @@
+var json = [
+  <% json .map(function(name){ %>
+    '<%= name %>',
+  <% })%>
+];
+var png = [
+  <% png.map(function(name){ %>
+
+    '<%= name %>',
+
+  <% })%>
+];
+
+module.exports = function (add,callback) {
+
+  add(json,'json','<%= sceneTitle %>')
+  .add(png,'png','<%= sceneTitle %>')
+  .load(callback);
+}
